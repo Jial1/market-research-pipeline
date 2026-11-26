@@ -2,6 +2,8 @@
 
 A watchlist becomes a research report. Qualified stock plans are saved and evaluated later under explicit, versioned rules.
 
+This portfolio edition was extracted and simplified from a larger personal research system.
+
 **Stack:** Node.js · Python · PostgreSQL · OpenAI · market-data APIs · GitHub Actions
 
 [![Offline verification](https://github.com/Jial1/market-research-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/Jial1/market-research-pipeline/actions/workflows/ci.yml)
@@ -52,6 +54,14 @@ flowchart LR
 ```
 
 The application owns measured indicators, freshness/earnings checks and plan approval. Conditional preparation and options scenarios stay outside stock evaluation. Paid-response checkpoints, atomic storage and uncertain-delivery handling support recovery. The system does not execute trades.
+
+## LLM integration
+
+The LLM interprets supplied market evidence and proposes research commentary, candidate stock plans and conditional preparation ideas. The application supplies quotes, symbol-specific news, data-quality flags, calculated indicators and market/earnings context through a [versioned prompt](src/reportPrompt.js). Indicator arithmetic stays in application code.
+
+The [OpenAI adapter](src/ai.js) requests a response constrained by the strict [ModelAnalysisV1 JSON schema](src/modelAnalysis.js). The application validates the response again, checks symbol identity and applies its own price, risk/reward, freshness, calendar and earnings rules before accepting a plan. Invalid or incomplete generation cannot issue tracked plans. Application code constructs and renders the final report.
+
+The workflow checkpoints the exact request and returned response, completion status and token usage so recovery can reuse saved responses. Historical evaluation supplies version-specific outcome summaries as prompt context; this feedback does not update model weights. The offline demo uses a fixed synthetic model response through the same validation and reporting path.
 
 ## Review the implementation
 
