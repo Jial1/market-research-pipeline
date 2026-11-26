@@ -1,6 +1,6 @@
 # AI-Assisted Market Research Pipeline
 
-A watchlist becomes an English research report. Qualified stock plans are saved and evaluated later under explicit, versioned rules.
+A watchlist becomes a research report. Qualified stock plans are saved and evaluated later under explicit, versioned rules.
 
 **Stack:** Node.js · Python · PostgreSQL · OpenAI · market-data APIs · GitHub Actions
 
