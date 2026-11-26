@@ -4,6 +4,8 @@ A watchlist becomes an English research report. Qualified stock plans are saved 
 
 **Stack:** Node.js · Python · PostgreSQL · OpenAI · market-data APIs · GitHub Actions
 
+[![Offline verification](https://github.com/Jial1/market-research-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/Jial1/market-research-pipeline/actions/workflows/ci.yml)
+
 ![Synthetic report preview](examples/report-preview.png)
 
 ## Try the offline demo
