@@ -1,0 +1,688 @@
+{
+  "kind": "language_independent_private_reference",
+  "scenarios": {
+    "market-open": {
+      "input_evidence_sha256": "f9e1c2d69ee9d65d3220817a5bcab23bef7a15dc56ea48f91e53c944403eb7ba",
+      "recommendations": [
+        {
+          "symbol": "NVDA",
+          "trade_direction": "long",
+          "entry_prediction": "breakout",
+          "entry_price": 120.2,
+          "target_price": 130.2,
+          "stop_loss": 116.2,
+          "risk_reward": 2.5,
+          "setup_score": 80,
+          "setup_quality": "B",
+          "ai_confidence": 0.5,
+          "order_type": "buy_stop",
+          "evaluation_policy": {
+            "version": "next-session-v1",
+            "entry_sessions": 3,
+            "holding_sessions": 3,
+            "friction_bps_per_side": {
+              "low": 0,
+              "base": 5,
+              "high": 15
+            },
+            "history_delay_minutes": 16,
+            "feed": "sip",
+            "split_crossing": "unavailable",
+            "orders": {
+              "long:breakout": "buy_stop",
+              "long:pullback": "buy_limit",
+              "short:breakout": "sell_stop",
+              "short:pullback": "sell_limit"
+            }
+          }
+        }
+      ],
+      "preparation": [],
+      "preparation_states": {
+        "NVDA": {
+          "state": "not_applicable",
+          "reason": "preparation_closed_market_only"
+        },
+        "MSFT": {
+          "state": "not_applicable",
+          "reason": "preparation_closed_market_only"
+        }
+      },
+      "exclusions": [
+        {
+          "symbol": "MSFT",
+          "reason": "reported_earnings_conflict",
+          "conflicts": [
+            {
+              "symbol": "MSFT",
+              "date": "2026-10-22",
+              "timing": "after_close",
+              "certainty": "reported_unconfirmed",
+              "source": "finnhub",
+              "observed_at": "2026-10-21T16:00:00.000Z",
+              "provider_updated_at": null
+            }
+          ]
+        }
+      ],
+      "options_sha256": "1c003805b447b840f0bdd13310a2a2a9ac9f8946542c2cc9181d25854d3a1a87",
+      "market_context_sha256": "0b1e8647a5e912b24345007ef660123f9feb2247869a82524878f9ebbfb3a9f2",
+      "evaluation_policy": {
+        "version": "next-session-v1",
+        "entry_sessions": 3,
+        "holding_sessions": 3,
+        "friction_bps_per_side": {
+          "low": 0,
+          "base": 5,
+          "high": 15
+        },
+        "history_delay_minutes": 16,
+        "feed": "sip",
+        "split_crossing": "unavailable",
+        "orders": {
+          "long:breakout": "buy_stop",
+          "long:pullback": "buy_limit",
+          "short:breakout": "sell_stop",
+          "short:pullback": "sell_limit"
+        }
+      },
+      "issued_at": "2026-10-21T16:00:00.000Z",
+      "eligible_session": "2026-10-22",
+      "data_quality": {
+        "checked_at": "2026-10-21T16:00:00.000Z",
+        "session_state": "open",
+        "eligible_session": "2026-10-22",
+        "symbols": [
+          {
+            "symbol": "NVDA",
+            "source": "finnhub",
+            "enforced": true,
+            "status": "ok",
+            "actionable": true,
+            "reasons": [],
+            "historical": {
+              "version": "daily-indicators-v1",
+              "status": "ok",
+              "completed_sessions": 200,
+              "asof_session": "2026-10-20",
+              "values": {
+                "sma20": 118.94999999999999,
+                "sma50": 117.44999999999999,
+                "sma200": 109.94999999999993,
+                "return5d": 0.41876046901172526,
+                "return20d": 1.6963528413910023,
+                "return50d": 4.351610095735414,
+                "atr14": 1.5,
+                "range20Low": 117.3,
+                "range20High": 120.7
+              },
+              "enforced": true,
+              "eligible": true,
+              "source": "alpaca",
+              "feed": "sip",
+              "adjustment": "split",
+              "validated_asof": "2026-10-21T15:44:00.000Z",
+              "excluded_incomplete": 0,
+              "reasons": []
+            }
+          },
+          {
+            "symbol": "MSFT",
+            "source": "finnhub",
+            "enforced": true,
+            "status": "ok",
+            "actionable": true,
+            "reasons": [],
+            "historical": {
+              "version": "daily-indicators-v1",
+              "status": "ok",
+              "completed_sessions": 200,
+              "asof_session": "2026-10-20",
+              "values": {
+                "sma20": 118.94999999999999,
+                "sma50": 117.44999999999999,
+                "sma200": 109.94999999999993,
+                "return5d": 0.41876046901172526,
+                "return20d": 1.6963528413910023,
+                "return50d": 4.351610095735414,
+                "atr14": 1.5,
+                "range20Low": 117.3,
+                "range20High": 120.7
+              },
+              "enforced": true,
+              "eligible": true,
+              "source": "alpaca",
+              "feed": "sip",
+              "adjustment": "split",
+              "validated_asof": "2026-10-21T15:44:00.000Z",
+              "excluded_incomplete": 0,
+              "reasons": []
+            }
+          }
+        ]
+      }
+    },
+    "overnight": {
+      "input_evidence_sha256": "78a0a7ac3856b98854b7c3d68d5db2c677a6b27947565972575a8d403ab8cc4b",
+      "recommendations": [],
+      "preparation": [
+        {
+          "symbol": "NVDA",
+          "trade_direction": "long",
+          "entry_price": 120,
+          "target_price": 130,
+          "stop_loss": 116,
+          "risk_reward": 2.5,
+          "evidence_asof": "2026-10-20",
+          "session": "2026-10-21"
+        }
+      ],
+      "preparation_states": {
+        "NVDA": {
+          "state": "preparation"
+        },
+        "MSFT": {
+          "state": "blocked",
+          "reason": "reported_earnings_conflict"
+        }
+      },
+      "exclusions": [],
+      "options_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "market_context_sha256": "1f0a409c3e7624c15774168c7d64a3c88f87601ffdba7199fbb4af1a977727ff",
+      "evaluation_policy": {
+        "version": "next-session-v1",
+        "entry_sessions": 3,
+        "holding_sessions": 3,
+        "friction_bps_per_side": {
+          "low": 0,
+          "base": 5,
+          "high": 15
+        },
+        "history_delay_minutes": 16,
+        "feed": "sip",
+        "split_crossing": "unavailable",
+        "orders": {
+          "long:breakout": "buy_stop",
+          "long:pullback": "buy_limit",
+          "short:breakout": "sell_stop",
+          "short:pullback": "sell_limit"
+        }
+      },
+      "issued_at": "2026-10-21T12:00:00.000Z",
+      "eligible_session": "2026-10-22",
+      "data_quality": {
+        "checked_at": "2026-10-21T12:00:00.000Z",
+        "session_state": "closed",
+        "eligible_session": "2026-10-22",
+        "symbols": [
+          {
+            "symbol": "NVDA",
+            "source": "finnhub",
+            "enforced": true,
+            "status": "research_only",
+            "actionable": false,
+            "reasons": [
+              "market_closed"
+            ],
+            "historical": {
+              "version": "daily-indicators-v1",
+              "status": "ok",
+              "completed_sessions": 200,
+              "asof_session": "2026-10-20",
+              "values": {
+                "sma20": 118.94999999999999,
+                "sma50": 117.44999999999999,
+                "sma200": 109.94999999999993,
+                "return5d": 0.41876046901172526,
+                "return20d": 1.6963528413910023,
+                "return50d": 4.351610095735414,
+                "atr14": 1.5,
+                "range20Low": 117.3,
+                "range20High": 120.7
+              },
+              "enforced": true,
+              "eligible": true,
+              "source": "alpaca",
+              "feed": "sip",
+              "adjustment": "split",
+              "validated_asof": "2026-10-21T11:44:00.000Z",
+              "excluded_incomplete": 0,
+              "reasons": []
+            }
+          },
+          {
+            "symbol": "MSFT",
+            "source": "finnhub",
+            "enforced": true,
+            "status": "research_only",
+            "actionable": false,
+            "reasons": [
+              "market_closed"
+            ],
+            "historical": {
+              "version": "daily-indicators-v1",
+              "status": "ok",
+              "completed_sessions": 200,
+              "asof_session": "2026-10-20",
+              "values": {
+                "sma20": 118.94999999999999,
+                "sma50": 117.44999999999999,
+                "sma200": 109.94999999999993,
+                "return5d": 0.41876046901172526,
+                "return20d": 1.6963528413910023,
+                "return50d": 4.351610095735414,
+                "atr14": 1.5,
+                "range20Low": 117.3,
+                "range20High": 120.7
+              },
+              "enforced": true,
+              "eligible": true,
+              "source": "alpaca",
+              "feed": "sip",
+              "adjustment": "split",
+              "validated_asof": "2026-10-21T11:44:00.000Z",
+              "excluded_incomplete": 0,
+              "reasons": []
+            }
+          }
+        ]
+      }
+    },
+    "earnings-conflict": {
+      "input_evidence_sha256": "37ff06eadb11f486b7697d9573b0b722a1d9924a9286c6ad313e219f53b48998",
+      "recommendations": [],
+      "preparation": [],
+      "preparation_states": {
+        "NVDA": {
+          "state": "blocked",
+          "reason": "reported_earnings_conflict"
+        },
+        "MSFT": {
+          "state": "blocked",
+          "reason": "reported_earnings_conflict"
+        }
+      },
+      "exclusions": [],
+      "options_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "market_context_sha256": "089b1a124909d85e5cdac06ad52f045f6505f6b89e7bbacfb2e9a173d454ab70",
+      "evaluation_policy": {
+        "version": "next-session-v1",
+        "entry_sessions": 3,
+        "holding_sessions": 3,
+        "friction_bps_per_side": {
+          "low": 0,
+          "base": 5,
+          "high": 15
+        },
+        "history_delay_minutes": 16,
+        "feed": "sip",
+        "split_crossing": "unavailable",
+        "orders": {
+          "long:breakout": "buy_stop",
+          "long:pullback": "buy_limit",
+          "short:breakout": "sell_stop",
+          "short:pullback": "sell_limit"
+        }
+      },
+      "issued_at": "2026-10-21T12:00:00.000Z",
+      "eligible_session": "2026-10-22",
+      "data_quality": {
+        "checked_at": "2026-10-21T12:00:00.000Z",
+        "session_state": "closed",
+        "eligible_session": "2026-10-22",
+        "symbols": [
+          {
+            "symbol": "NVDA",
+            "source": "finnhub",
+            "enforced": true,
+            "status": "research_only",
+            "actionable": false,
+            "reasons": [
+              "market_closed"
+            ],
+            "historical": {
+              "version": "daily-indicators-v1",
+              "status": "ok",
+              "completed_sessions": 200,
+              "asof_session": "2026-10-20",
+              "values": {
+                "sma20": 118.94999999999999,
+                "sma50": 117.44999999999999,
+                "sma200": 109.94999999999993,
+                "return5d": 0.41876046901172526,
+                "return20d": 1.6963528413910023,
+                "return50d": 4.351610095735414,
+                "atr14": 1.5,
+                "range20Low": 117.3,
+                "range20High": 120.7
+              },
+              "enforced": true,
+              "eligible": true,
+              "source": "alpaca",
+              "feed": "sip",
+              "adjustment": "split",
+              "validated_asof": "2026-10-21T11:44:00.000Z",
+              "excluded_incomplete": 0,
+              "reasons": []
+            }
+          },
+          {
+            "symbol": "MSFT",
+            "source": "finnhub",
+            "enforced": true,
+            "status": "research_only",
+            "actionable": false,
+            "reasons": [
+              "market_closed"
+            ],
+            "historical": {
+              "version": "daily-indicators-v1",
+              "status": "ok",
+              "completed_sessions": 200,
+              "asof_session": "2026-10-20",
+              "values": {
+                "sma20": 118.94999999999999,
+                "sma50": 117.44999999999999,
+                "sma200": 109.94999999999993,
+                "return5d": 0.41876046901172526,
+                "return20d": 1.6963528413910023,
+                "return50d": 4.351610095735414,
+                "atr14": 1.5,
+                "range20Low": 117.3,
+                "range20High": 120.7
+              },
+              "enforced": true,
+              "eligible": true,
+              "source": "alpaca",
+              "feed": "sip",
+              "adjustment": "split",
+              "validated_asof": "2026-10-21T11:44:00.000Z",
+              "excluded_incomplete": 0,
+              "reasons": []
+            }
+          }
+        ]
+      }
+    },
+    "unavailable-data": {
+      "input_evidence_sha256": "e07751c575595f3ac9fce5b0869d4c47f01ee9f1a4a29286bb39f24c7f6b2cd6",
+      "recommendations": [],
+      "preparation": [],
+      "preparation_states": {
+        "NVDA": {
+          "state": "blocked",
+          "reason": "preparation_data_unqualified"
+        },
+        "MSFT": {
+          "state": "blocked",
+          "reason": "reported_earnings_conflict"
+        }
+      },
+      "exclusions": [],
+      "options_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "market_context_sha256": "1f0a409c3e7624c15774168c7d64a3c88f87601ffdba7199fbb4af1a977727ff",
+      "evaluation_policy": {
+        "version": "next-session-v1",
+        "entry_sessions": 3,
+        "holding_sessions": 3,
+        "friction_bps_per_side": {
+          "low": 0,
+          "base": 5,
+          "high": 15
+        },
+        "history_delay_minutes": 16,
+        "feed": "sip",
+        "split_crossing": "unavailable",
+        "orders": {
+          "long:breakout": "buy_stop",
+          "long:pullback": "buy_limit",
+          "short:breakout": "sell_stop",
+          "short:pullback": "sell_limit"
+        }
+      },
+      "issued_at": "2026-10-21T12:00:00.000Z",
+      "eligible_session": "2026-10-22",
+      "data_quality": {
+        "checked_at": "2026-10-21T12:00:00.000Z",
+        "session_state": "closed",
+        "eligible_session": "2026-10-22",
+        "symbols": [
+          {
+            "symbol": "NVDA",
+            "source": "finnhub",
+            "enforced": true,
+            "status": "invalid",
+            "actionable": false,
+            "reasons": [
+              "quote_unavailable",
+              "insufficient_history_51"
+            ],
+            "historical": {
+              "version": "daily-indicators-v1",
+              "status": "limited",
+              "completed_sessions": 50,
+              "asof_session": "2026-10-20",
+              "values": {
+                "sma20": 118.94999999999999,
+                "sma50": 117.44999999999999,
+                "sma200": null,
+                "return5d": 0.41876046901172526,
+                "return20d": 1.6963528413910023,
+                "return50d": null,
+                "atr14": 1.5,
+                "range20Low": 117.3,
+                "range20High": 120.7
+              },
+              "enforced": true,
+              "eligible": false,
+              "source": "alpaca",
+              "feed": "sip",
+              "adjustment": "split",
+              "validated_asof": "2026-10-21T11:44:00.000Z",
+              "excluded_incomplete": 0,
+              "reasons": [
+                "insufficient_history_51"
+              ]
+            }
+          },
+          {
+            "symbol": "MSFT",
+            "source": "finnhub",
+            "enforced": true,
+            "status": "research_only",
+            "actionable": false,
+            "reasons": [
+              "market_closed"
+            ],
+            "historical": {
+              "version": "daily-indicators-v1",
+              "status": "ok",
+              "completed_sessions": 200,
+              "asof_session": "2026-10-20",
+              "values": {
+                "sma20": 118.94999999999999,
+                "sma50": 117.44999999999999,
+                "sma200": 109.94999999999993,
+                "return5d": 0.41876046901172526,
+                "return20d": 1.6963528413910023,
+                "return50d": 4.351610095735414,
+                "atr14": 1.5,
+                "range20Low": 117.3,
+                "range20High": 120.7
+              },
+              "enforced": true,
+              "eligible": true,
+              "source": "alpaca",
+              "feed": "sip",
+              "adjustment": "split",
+              "validated_asof": "2026-10-21T11:44:00.000Z",
+              "excluded_incomplete": 0,
+              "reasons": []
+            }
+          }
+        ]
+      }
+    },
+    "options-unavailable": {
+      "input_evidence_sha256": "f9e1c2d69ee9d65d3220817a5bcab23bef7a15dc56ea48f91e53c944403eb7ba",
+      "recommendations": [
+        {
+          "symbol": "NVDA",
+          "trade_direction": "long",
+          "entry_prediction": "breakout",
+          "entry_price": 120.2,
+          "target_price": 130.2,
+          "stop_loss": 116.2,
+          "risk_reward": 2.5,
+          "setup_score": 80,
+          "setup_quality": "B",
+          "ai_confidence": 0.5,
+          "order_type": "buy_stop",
+          "evaluation_policy": {
+            "version": "next-session-v1",
+            "entry_sessions": 3,
+            "holding_sessions": 3,
+            "friction_bps_per_side": {
+              "low": 0,
+              "base": 5,
+              "high": 15
+            },
+            "history_delay_minutes": 16,
+            "feed": "sip",
+            "split_crossing": "unavailable",
+            "orders": {
+              "long:breakout": "buy_stop",
+              "long:pullback": "buy_limit",
+              "short:breakout": "sell_stop",
+              "short:pullback": "sell_limit"
+            }
+          }
+        }
+      ],
+      "preparation": [],
+      "preparation_states": {
+        "NVDA": {
+          "state": "not_applicable",
+          "reason": "preparation_closed_market_only"
+        },
+        "MSFT": {
+          "state": "not_applicable",
+          "reason": "preparation_closed_market_only"
+        }
+      },
+      "exclusions": [
+        {
+          "symbol": "MSFT",
+          "reason": "reported_earnings_conflict",
+          "conflicts": [
+            {
+              "symbol": "MSFT",
+              "date": "2026-10-22",
+              "timing": "after_close",
+              "certainty": "reported_unconfirmed",
+              "source": "finnhub",
+              "observed_at": "2026-10-21T16:00:00.000Z",
+              "provider_updated_at": null
+            }
+          ]
+        }
+      ],
+      "options_sha256": "b1dc4290dfd1d60c369304b15842749be9fcfaebfdcc13d690a47fc3debc19df",
+      "market_context_sha256": "0b1e8647a5e912b24345007ef660123f9feb2247869a82524878f9ebbfb3a9f2",
+      "evaluation_policy": {
+        "version": "next-session-v1",
+        "entry_sessions": 3,
+        "holding_sessions": 3,
+        "friction_bps_per_side": {
+          "low": 0,
+          "base": 5,
+          "high": 15
+        },
+        "history_delay_minutes": 16,
+        "feed": "sip",
+        "split_crossing": "unavailable",
+        "orders": {
+          "long:breakout": "buy_stop",
+          "long:pullback": "buy_limit",
+          "short:breakout": "sell_stop",
+          "short:pullback": "sell_limit"
+        }
+      },
+      "issued_at": "2026-10-21T16:00:00.000Z",
+      "eligible_session": "2026-10-22",
+      "data_quality": {
+        "checked_at": "2026-10-21T16:00:00.000Z",
+        "session_state": "open",
+        "eligible_session": "2026-10-22",
+        "symbols": [
+          {
+            "symbol": "NVDA",
+            "source": "finnhub",
+            "enforced": true,
+            "status": "ok",
+            "actionable": true,
+            "reasons": [],
+            "historical": {
+              "version": "daily-indicators-v1",
+              "status": "ok",
+              "completed_sessions": 200,
+              "asof_session": "2026-10-20",
+              "values": {
+                "sma20": 118.94999999999999,
+                "sma50": 117.44999999999999,
+                "sma200": 109.94999999999993,
+                "return5d": 0.41876046901172526,
+                "return20d": 1.6963528413910023,
+                "return50d": 4.351610095735414,
+                "atr14": 1.5,
+                "range20Low": 117.3,
+                "range20High": 120.7
+              },
+              "enforced": true,
+              "eligible": true,
+              "source": "alpaca",
+              "feed": "sip",
+              "adjustment": "split",
+              "validated_asof": "2026-10-21T15:44:00.000Z",
+              "excluded_incomplete": 0,
+              "reasons": []
+            }
+          },
+          {
+            "symbol": "MSFT",
+            "source": "finnhub",
+            "enforced": true,
+            "status": "ok",
+            "actionable": true,
+            "reasons": [],
+            "historical": {
+              "version": "daily-indicators-v1",
+              "status": "ok",
+              "completed_sessions": 200,
+              "asof_session": "2026-10-20",
+              "values": {
+                "sma20": 118.94999999999999,
+                "sma50": 117.44999999999999,
+                "sma200": 109.94999999999993,
+                "return5d": 0.41876046901172526,
+                "return20d": 1.6963528413910023,
+                "return50d": 4.351610095735414,
+                "atr14": 1.5,
+                "range20Low": 117.3,
+                "range20High": 120.7
+              },
+              "enforced": true,
+              "eligible": true,
+              "source": "alpaca",
+              "feed": "sip",
+              "adjustment": "split",
+              "validated_asof": "2026-10-21T15:44:00.000Z",
+              "excluded_incomplete": 0,
+              "reasons": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

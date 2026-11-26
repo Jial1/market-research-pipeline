@@ -1,0 +1,7 @@
+{
+  "version": "evaluation-contract-v1",
+  "scored_states": ["won", "lost", "time_exit"],
+  "unfilled_terminal_states": ["expired", "invalidated", "research_only"],
+  "retryable_states": ["pending", "unavailable"],
+  "feedback_issuance_days": 30
+}

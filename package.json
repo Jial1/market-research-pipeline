@@ -1,0 +1,32 @@
+{
+  "name": "market-research-pipeline",
+  "version": "1.0.0",
+  "description": "Validated AI research reports and versioned historical recommendation evaluation",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "demo": "node scripts/demo.js",
+    "report:live": "node src/index.js --live",
+    "report:email": "node src/index.js --live --email",
+    "evaluate:demo": "python python/demo.py",
+    "evaluate:live": "python python/run_evaluation.py",
+    "test": "node scripts/test.js",
+    "test:python": "python -m unittest discover -s test -p \"*_test.py\" -v",
+    "test:integration": "node scripts/integration.js",
+    "check:release": "node scripts/check-release.js",
+    "package:release": "python scripts/package-release.py",
+    "db:migrate": "node scripts/migrate-db.js"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "openai": "^4.95.1",
+    "pg": "^8.11.3",
+    "resend": "^6.12.2"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  }
+}

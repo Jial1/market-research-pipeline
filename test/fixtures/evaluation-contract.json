@@ -1,0 +1,326 @@
+{
+  "contract_version": "evaluation-contract-v1",
+  "policy_version": "next-session-v1",
+  "orders": [
+    {
+      "trade_direction": "long",
+      "entry_prediction": "breakout",
+      "order_type": "buy_stop"
+    },
+    {
+      "trade_direction": "long",
+      "entry_prediction": "pullback",
+      "order_type": "buy_limit"
+    },
+    {
+      "trade_direction": "short",
+      "entry_prediction": "breakout",
+      "order_type": "sell_stop"
+    },
+    {
+      "trade_direction": "short",
+      "entry_prediction": "pullback",
+      "order_type": "sell_limit"
+    },
+    {
+      "trade_direction": "long",
+      "entry_prediction": "unknown",
+      "order_type": null
+    }
+  ],
+  "rows": {
+    "won": {
+      "evaluation_version": "next-session-v1",
+      "state": "won",
+      "was_entry_hit": true,
+      "net_return_pct": 9,
+      "gross_return_pct": 10,
+      "ambiguous": false,
+      "details": {
+        "cost_sensitivity": {
+          "low": 10,
+          "base": 9,
+          "high": 8
+        }
+      }
+    },
+    "lost": {
+      "evaluation_version": "next-session-v1",
+      "state": "lost",
+      "was_entry_hit": true,
+      "net_return_pct": -5,
+      "gross_return_pct": -4,
+      "ambiguous": true,
+      "details": {
+        "cost_sensitivity": {
+          "low": -4,
+          "base": -5,
+          "high": -6
+        }
+      }
+    },
+    "time_exit_zero": {
+      "evaluation_version": "next-session-v1",
+      "state": "time_exit",
+      "was_entry_hit": true,
+      "net_return_pct": 0,
+      "gross_return_pct": 1,
+      "ambiguous": false,
+      "details": {
+        "cost_sensitivity": {
+          "low": 1,
+          "base": 0,
+          "high": -1
+        }
+      }
+    },
+    "time_exit_gain": {
+      "evaluation_version": "next-session-v1",
+      "state": "time_exit",
+      "was_entry_hit": true,
+      "net_return_pct": 2,
+      "gross_return_pct": 3,
+      "ambiguous": false,
+      "details": {
+        "cost_sensitivity": {
+          "low": 3,
+          "base": 2,
+          "high": 1
+        }
+      }
+    },
+    "won_net_loss": {
+      "evaluation_version": "next-session-v1",
+      "state": "won",
+      "was_entry_hit": true,
+      "net_return_pct": -0.5,
+      "gross_return_pct": 0.5,
+      "ambiguous": false,
+      "details": {
+        "cost_sensitivity": {
+          "low": 0.5,
+          "base": -0.5,
+          "high": -1.5
+        }
+      }
+    },
+    "expired": {
+      "evaluation_version": "next-session-v1",
+      "state": "expired",
+      "was_entry_hit": false,
+      "net_return_pct": null,
+      "gross_return_pct": null,
+      "ambiguous": false,
+      "details": {
+        "cost_sensitivity": null
+      }
+    },
+    "invalidated": {
+      "evaluation_version": "next-session-v1",
+      "state": "invalidated",
+      "was_entry_hit": false,
+      "net_return_pct": null,
+      "gross_return_pct": null,
+      "ambiguous": true,
+      "details": {
+        "cost_sensitivity": null
+      }
+    },
+    "research_only": {
+      "evaluation_version": "next-session-v1",
+      "state": "research_only",
+      "was_entry_hit": false,
+      "net_return_pct": null,
+      "gross_return_pct": null,
+      "ambiguous": false,
+      "details": {
+        "cost_sensitivity": null
+      }
+    },
+    "pending_filled": {
+      "evaluation_version": "next-session-v1",
+      "state": "pending",
+      "was_entry_hit": true,
+      "net_return_pct": null,
+      "gross_return_pct": null,
+      "ambiguous": false,
+      "details": {
+        "cost_sensitivity": null
+      }
+    },
+    "unavailable": {
+      "evaluation_version": "next-session-v1",
+      "state": "unavailable",
+      "was_entry_hit": false,
+      "net_return_pct": null,
+      "gross_return_pct": null,
+      "ambiguous": true,
+      "details": {
+        "cost_sensitivity": null
+      }
+    },
+    "closed_unfilled": {
+      "evaluation_version": "next-session-v1",
+      "state": "lost",
+      "was_entry_hit": false,
+      "net_return_pct": -1,
+      "gross_return_pct": 0,
+      "ambiguous": false,
+      "details": {
+        "cost_sensitivity": {
+          "low": 0,
+          "base": -1,
+          "high": -2
+        }
+      }
+    },
+    "closed_missing_return": {
+      "evaluation_version": "next-session-v1",
+      "state": "won",
+      "was_entry_hit": true,
+      "net_return_pct": null,
+      "gross_return_pct": null,
+      "ambiguous": false,
+      "details": {
+        "cost_sensitivity": null
+      }
+    },
+    "cost_variant": {
+      "evaluation_version": "next-session-v1-cost-8",
+      "state": "won",
+      "was_entry_hit": true,
+      "net_return_pct": 10000,
+      "gross_return_pct": 10001,
+      "ambiguous": false,
+      "details": {
+        "cost_sensitivity": {
+          "low": 10001,
+          "base": 10000,
+          "high": 9999
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "name": "mixed_outcomes_and_cost_variant",
+      "expected_common": {
+        "evaluation_version": "next-session-v1",
+        "total_plans": 12,
+        "filled_closed": 5,
+        "pending": 1,
+        "unavailable": 1,
+        "unfilled_terminal": 3,
+        "ambiguous_count": 3,
+        "net_win_rate": 0.4,
+        "avg_net_return_pct": 1.1
+      },
+      "expected_python": {
+        "filled_count": 7,
+        "avg_gross_return_pct": 2.1,
+        "cost_sensitivity": {
+          "low": 2.1,
+          "base": 1.1,
+          "high": 0.1
+        }
+      },
+      "row_names": [
+        "won",
+        "lost",
+        "time_exit_zero",
+        "time_exit_gain",
+        "won_net_loss",
+        "expired",
+        "invalidated",
+        "research_only",
+        "pending_filled",
+        "unavailable",
+        "closed_unfilled",
+        "closed_missing_return",
+        "cost_variant"
+      ]
+    },
+    {
+      "name": "empty_sample",
+      "expected_common": {
+        "evaluation_version": "next-session-v1",
+        "total_plans": 0,
+        "filled_closed": 0,
+        "pending": 0,
+        "unavailable": 0,
+        "unfilled_terminal": 0,
+        "ambiguous_count": 0,
+        "net_win_rate": null,
+        "avg_net_return_pct": null
+      },
+      "expected_python": {
+        "filled_count": 0,
+        "avg_gross_return_pct": null,
+        "cost_sensitivity": {
+          "low": null,
+          "base": null,
+          "high": null
+        }
+      },
+      "row_names": []
+    },
+    {
+      "name": "only_another_version",
+      "expected_common": {
+        "evaluation_version": "next-session-v1",
+        "total_plans": 0,
+        "filled_closed": 0,
+        "pending": 0,
+        "unavailable": 0,
+        "unfilled_terminal": 0,
+        "ambiguous_count": 0,
+        "net_win_rate": null,
+        "avg_net_return_pct": null
+      },
+      "expected_python": {
+        "filled_count": 0,
+        "avg_gross_return_pct": null,
+        "cost_sensitivity": {
+          "low": null,
+          "base": null,
+          "high": null
+        }
+      },
+      "row_names": [
+        "cost_variant"
+      ]
+    },
+    {
+      "name": "no_scored_returns",
+      "expected_common": {
+        "evaluation_version": "next-session-v1",
+        "total_plans": 7,
+        "filled_closed": 0,
+        "pending": 1,
+        "unavailable": 1,
+        "unfilled_terminal": 3,
+        "ambiguous_count": 2,
+        "net_win_rate": null,
+        "avg_net_return_pct": null
+      },
+      "expected_python": {
+        "filled_count": 2,
+        "avg_gross_return_pct": null,
+        "cost_sensitivity": {
+          "low": null,
+          "base": null,
+          "high": null
+        }
+      },
+      "row_names": [
+        "expired",
+        "invalidated",
+        "research_only",
+        "pending_filled",
+        "unavailable",
+        "closed_unfilled",
+        "closed_missing_return"
+      ]
+    }
+  ]
+}

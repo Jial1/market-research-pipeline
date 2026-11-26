@@ -1,0 +1,15 @@
+{
+  "version": "next-session-v1",
+  "entry_sessions": 3,
+  "holding_sessions": 3,
+  "friction_bps_per_side": { "low": 0, "base": 5, "high": 15 },
+  "history_delay_minutes": 16,
+  "feed": "sip",
+  "split_crossing": "unavailable",
+  "orders": {
+    "long:breakout": "buy_stop",
+    "long:pullback": "buy_limit",
+    "short:breakout": "sell_stop",
+    "short:pullback": "sell_limit"
+  }
+}

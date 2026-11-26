@@ -1,0 +1,33 @@
+{
+  "legacy": {
+    "through_version": 4,
+    "fingerprint": "7fa41527b8c3048a6fd2c0f61ace3733c9b414aa5a194d295ee17fb4076d0b61"
+  },
+  "migrations": [
+    {
+      "version": 1,
+      "file": "001_base.sql",
+      "sha256": "93ca973b65694e8649f6c5f93ead1c47d9f3ddfeed6717cd598deb8485ad75ec"
+    },
+    {
+      "version": 2,
+      "file": "002_report_runs.sql",
+      "sha256": "bac66e27e70d1aea539577f6c6faf6eca83336f9d8b6464f9651a722e94f113f"
+    },
+    {
+      "version": 3,
+      "file": "003_correct_evaluation.sql",
+      "sha256": "9e876758c4ec8798bb21f3e6a10f35d94b1cc91e2d2443dfe6d7550688f4edae"
+    },
+    {
+      "version": 4,
+      "file": "004_run_operations.sql",
+      "sha256": "297ccf45223bd1ea99d58c108f9aeceb2d9b39e7da59a86ee8063cc3518bdd98"
+    },
+    {
+      "version": 5,
+      "file": "005_run_evidence.sql",
+      "sha256": "a4d02070bb4fc817f42b2641edffccb1934a06c8e8d18e5b58d028881c1292b6"
+    }
+  ]
+}
